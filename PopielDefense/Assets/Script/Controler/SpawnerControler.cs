@@ -5,13 +5,12 @@ using UnityEngine;
 public class SpawnerControler : MonoBehaviour
 {
     public GameObject mouseM;
-    public GameObject mouseR;
-    public GameObject mouseS;
     [SerializeField]
     GameObject points;
     Waypoints path;
 
-    float time = 3.0f;
+    public float MPS = 1f;
+    float time = 1f;
     float timer = 0.0f;
 
     private void Awake()
@@ -34,30 +33,19 @@ public class SpawnerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        time =  1f / MPS;
         timer += Time.deltaTime;
-        if(timer > time)
+		if (timer > time)
 		{
-            SpawnEnemy();
+			SpawnEnemy();
             timer = 0.0f;
 		}
     }
 
     public void SpawnEnemy()
 	{
-        int r = Random.Range(0, 3);
         GameObject e = null;
-        switch(r)
-		{
-            case (int)EnemyType.meele:
-                e = Instantiate(mouseM);
-                break;
-            case (int)EnemyType.ranged:
-                e = Instantiate(mouseR);
-                break;
-            case (int)EnemyType.support:
-                e = Instantiate(mouseS);
-                break;
-        }
+        e = Instantiate(mouseM);
         e.GetComponent<MouseControler>().Init(path, transform);
 	}
 }

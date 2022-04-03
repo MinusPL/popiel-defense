@@ -33,18 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "DebugSpawn",
+                    "name": "Build",
                     "type": "Button",
-                    "id": "d80b7873-c023-46d1-bcfa-f5dbde66d094",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "DebugEXPLOSION",
-                    "type": "Button",
-                    "id": "abf341ad-cf10-4a11-b243-25fdf55af1e7",
+                    "id": "a3980293-2fb0-4d23-acb0-0c4ce56d04ba",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -274,23 +265,12 @@
                 },
                 {
                     "name": "",
-                    "id": "08c0588b-fb10-4bcb-ad72-1ac838187bd9",
-                    "path": "<Keyboard>/m",
+                    "id": "0ea588cb-7150-428d-86e5-519de5e308fb",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "DebugSpawn",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "76b2379c-344e-49ea-9bea-c3a4eac64e4f",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "DebugEXPLOSION",
+                    "action": "Build",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

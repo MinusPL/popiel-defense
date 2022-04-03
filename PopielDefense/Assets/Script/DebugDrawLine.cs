@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingManager : MonoBehaviour
+public class DebugDrawLine : MonoBehaviour
 {
-    public 
     // Start is called before the first frame update
     void Start()
     {
@@ -16,4 +15,10 @@ public class BuildingManager : MonoBehaviour
     {
         
     }
+
+	private void OnDrawGizmos()
+	{
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * 10.0f);
+	}
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Popiel
   - Enemy
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -14,10 +15,10 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
-  - 
-  - 
-  - 
+  - PostProcess
+  - Terrain
+  - PathColliders
+  - Blueprints
   - 
   - 
   - 

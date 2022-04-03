@@ -14,10 +14,14 @@ public class TurretControler : MonoBehaviour
     public GameObject bullet;
     public Transform firePoint;
 
+    Vector3 dir2;
+
+    private float targetSeekTime = 0.25f;
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateTarget", 0.0f, 0.25f);
+        InvokeRepeating("UpdateTarget", 0.0f, targetSeekTime);
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class TurretControler : MonoBehaviour
         if (target != null)
         {
             Vector3 dir = target.transform.position - transform.position;
+            dir2 = dir;
             Quaternion lookRot = Quaternion.LookRotation(dir);
             Vector3 rot = Quaternion.Lerp(head.transform.rotation, lookRot, Time.deltaTime * rotationSpeed).eulerAngles;
             head.transform.rotation = Quaternion.Euler(0f, rot.y, 0f);
@@ -44,8 +49,8 @@ public class TurretControler : MonoBehaviour
 
     private void Fire()
 	{
-        GameObject bulletObject = Instantiate(bullet, firePoint.position, firePoint.rotation);
-        bulletObject.GetComponent<Bullet>().Init(target.transform);
+        GameObject bulletObject = Instantiate(bullet, firePoint.position, Quaternion.LookRotation(dir2));
+        bulletObject.GetComponent<Bullet>().Init(target, target.GetComponent<MouseControler>().bulletTarget.transform);
     }
 
     private void UpdateTarget()
@@ -67,9 +72,18 @@ public class TurretControler : MonoBehaviour
         target = nearestEnemy;
 	}
 
+    public void ChangeSeekTime(float time)
+	{
+        CancelInvoke("UpdateTarget");
+        targetSeekTime = time;
+        InvokeRepeating("UpdateTarget", targetSeekTime, targetSeekTime);
+	}
+
 	private void OnDrawGizmos()
 	{
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
-	}
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + dir2.normalized * 10.0f);
+    }
 }
