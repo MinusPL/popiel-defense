@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: South_1
   m_EditorClassIdentifier: 
   waveNumber: 1
-  enemies: 0,0,0,0,0
+  spawnerID: 0
+  enemies: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
   spawnTime: 1

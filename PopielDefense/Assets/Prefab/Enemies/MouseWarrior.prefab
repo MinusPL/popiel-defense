@@ -796,9 +796,10 @@ MonoBehaviour:
   speed: 5
   range: 5
   type: 0
-  health: 2
+  health: 20
+  value: 5
   attackCooldown: 3
-  attackDamage: 1
+  attackDamage: 5
   damageDelay: 0.4
   canvas: {fileID: 3594352151372531198}
   healthBar: {fileID: 7995861723314676074}

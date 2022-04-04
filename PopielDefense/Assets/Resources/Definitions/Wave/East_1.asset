@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNumber: 1
   spawnerID: 2
-  enemies: 0,1,2,3,0,1,2,3,0,1,2,3
-  spawnTime: 2.5
+  enemies: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+  spawnTime: 1
