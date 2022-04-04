@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90c21f01eae35324782bd2956d3a9c09, type: 3}
-  m_Name: East_1
+  m_Script: {fileID: 11500000, guid: 28ddad7313aa2b64a858a730685b7103, type: 3}
+  m_Name: MouseFencer
   m_EditorClassIdentifier: 
-  waveNumber: 1
-  spawnerID: 2
-  enemies: 0,1,2,3,0,1,2,3,0,1,2,3
-  spawnTime: 2.5
+  id: 2
+  prefab: {fileID: 1276392784898771539, guid: 3c9b35137952bd24a8531d6c37df5a91, type: 3}
