@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
-    private uint money;
+    private int money;
 
-    public void AddMoney(uint amount)
+    public UpdateHud hud;
+    public int startingMoney = 200;
+
+	private void Start()
+	{
+        money = startingMoney;
+        Invoke("SlowStart", 0.1f);
+	}
+
+	public void AddMoney(int amount)
     {
         money += amount;
+        hud.goldCounter = money;
     }
 
-    public void SubtractMonet(uint amount)
+    public void SubtractMoney(int amount)
     {
         if (amount > money)
         {
@@ -21,15 +31,22 @@ public class ResourceManager : MonoBehaviour
         {
             money -= amount;
         }
+        hud.goldCounter = money;
     }
 
-    public uint GetMoney()
+    public int GetMoney()
     {
         return money;
     }
 
-    public void SetMoney(uint amount)
+    public void SetMoney(int amount)
     {
         money = amount;
+        hud.goldCounter = money;
+    }
+
+    private void SlowStart()
+	{
+        hud.goldCounter = money;
     }
 }

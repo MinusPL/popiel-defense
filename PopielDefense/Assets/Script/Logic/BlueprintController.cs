@@ -8,12 +8,16 @@ public class BlueprintController : MonoBehaviour
     public Material okMaterial;
     public Material badMaterial;
     public GameObject building;
-
+    public int price = 200;
+    private BuildingManager bManager;
+    private ResourceManager rManager;
     RaycastHit hit;
     int cCount = 0;
     // Start is called before the first frame update
     void Start()
     {
+        bManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<BuildingManager>();
+        rManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<ResourceManager>();
     }
 
     // Update is called once per frame
@@ -26,8 +30,14 @@ public class BlueprintController : MonoBehaviour
         {
             transform.position = hit.point;
         }
-
-        SetMaterial(cCount > 0 ? badMaterial : okMaterial);
+        if(cCount > 0 || rManager.GetMoney() < price)
+		{
+            SetMaterial(badMaterial);
+		}
+		else
+		{
+            SetMaterial(okMaterial);
+        }
     }
 
 	private void OnTriggerEnter(Collider other)
@@ -59,11 +69,23 @@ public class BlueprintController : MonoBehaviour
 
     public void OnFire(InputValue value)
 	{
-        if(value.isPressed && cCount == 0)
+        if(value.isPressed && cCount == 0 && rManager.GetMoney() >= price)
 		{
             Instantiate(building, transform.position, transform.rotation);
+            rManager.SubtractMoney(price);
+            bManager.Unlock();
             Destroy(gameObject);
             return;
 		}
 	}
+
+    public void OnCancelBuild(InputValue value)
+	{
+        if (value.isPressed)
+        {
+            bManager.Unlock();
+            Destroy(gameObject);
+            return;
+        }
+    }
 }

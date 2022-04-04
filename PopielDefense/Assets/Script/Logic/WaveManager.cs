@@ -36,11 +36,13 @@ public class WaveManager : MonoBehaviour
                 StartWave(currentWave);
 			}
             BWTimer -= Time.deltaTime;
+            hud.timerSeconds = (int)BWTimer + 1;
 		}
 
         if(waveInProgress)
 		{
-            if(enemyCount <= 0)
+            hud.timerSeconds = 0;
+            if (enemyCount <= 0)
 			{
                 currentWave++;
                 if(currentWave > waves+1)
@@ -51,6 +53,7 @@ public class WaveManager : MonoBehaviour
 			}
 		}
         hud.enemyCounter = enemyCount;
+        hud.waveNo = currentWave;
     }
 
     private void StartWave(int waveIndex)
