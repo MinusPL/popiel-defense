@@ -70,6 +70,9 @@ public class MouseControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        canvas.transform.rotation = Camera.main.transform.rotation;
+        if (popiel == null) return;
+
         Move();
         if (insideDestination)
         {
@@ -93,7 +96,7 @@ public class MouseControler : MonoBehaviour
 		}
         
         //UI face camera
-        canvas.transform.rotation = Camera.main.transform.rotation;
+        
         //canvas.transform.LookAt(Camera.main.transform);
     }
 

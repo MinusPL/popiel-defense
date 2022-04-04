@@ -18,6 +18,10 @@ public class WaveManager : MonoBehaviour
 
     public int enemyCount = 0;
 
+    public int[] dialogIds;
+
+    public LevelUIManager uiManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +54,12 @@ public class WaveManager : MonoBehaviour
                     shouldRun = false;
 				}
                 waveInProgress = false;
-			}
+                if (currentWave - 2 < dialogIds.Length)
+                {
+                    uiManager.StartDialog(dialogIds[currentWave - 2]);
+                    isRunning = false;
+                }
+            }
 		}
         hud.enemyCounter = enemyCount;
         hud.waveNo = currentWave;
@@ -69,4 +78,9 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
+
+    public void SetRunning()
+	{
+        isRunning = true;
+	}
 }
