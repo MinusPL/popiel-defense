@@ -112,7 +112,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WarriorAnimatorController
+  m_Name: ShieldAnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Moving
@@ -183,7 +183,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -7385663958659045353, guid: 76ad799161830d6498079181f5cac8dc, type: 3}
+  m_Motion: {fileID: -5456902635256818776, guid: 90a4c6cf399ef0d458e64df047f20b14, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -235,7 +235,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 8598966815213242258, guid: 76ad799161830d6498079181f5cac8dc, type: 3}
+  m_Motion: {fileID: 5792066853340834718, guid: 90a4c6cf399ef0d458e64df047f20b14, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
