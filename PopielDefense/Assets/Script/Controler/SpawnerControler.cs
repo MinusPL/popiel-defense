@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class SpawnerControler : MonoBehaviour
 {
-    public GameObject mouseM;
     [SerializeField]
     GameObject points;
+    [SerializeField]
+    Registry reg;
     Waypoints path;
+    public int spawnerID = 0;
 
-    public float MPS = 1f;
-    float time = 1f;
-    float timer = 0.0f;
+    private bool running = false;
+    private Queue<int> enemySpawns;
+
+    private float timeBetweenSpawns = 0f;
+    private float BSTimer = 0f;
 
     private void Awake()
     {
@@ -22,8 +26,10 @@ public class SpawnerControler : MonoBehaviour
             path.points[i] = points.transform.GetChild(i);
         }
         path.CalculateLengths();
+        enemySpawns = new Queue<int>();
     }
 
+    //Leave for endless mode, maybe in later patch / DLC
     // Start is called before the first frame update
     void Start()
     {
@@ -33,19 +39,38 @@ public class SpawnerControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time =  1f / MPS;
-        timer += Time.deltaTime;
-		if (timer > time)
+        if (enemySpawns.Count == 0) running = false;
+
+        if(running)
 		{
-			SpawnEnemy();
-            timer = 0.0f;
+            if(BSTimer <= 0f)
+			{
+                BSTimer = timeBetweenSpawns;
+                int id = enemySpawns.Dequeue();
+                Enemy en = reg.GetEnemy(id);
+                if(en == null)
+				{
+                    Debug.LogError($"No enemy with ID: {id}!");
+                    return;
+                }
+                var e = Instantiate(en.prefab);
+                e.GetComponent<MouseControler>().Init(path, transform);
+            }
+            BSTimer -= Time.deltaTime;
 		}
     }
 
-    public void SpawnEnemy()
+    public int SetupWave(string enemies, float _timeBetweenSpawns)
 	{
-        GameObject e = null;
-        e = Instantiate(mouseM);
-        e.GetComponent<MouseControler>().Init(path, transform);
+        timeBetweenSpawns = _timeBetweenSpawns;
+        enemySpawns.Clear();
+        var values = enemies.Trim().Split(',');
+        for(int i = 0; i < values.Length; i++)
+		{
+            enemySpawns.Enqueue(int.Parse(values[i]));
+		}
+        BSTimer = timeBetweenSpawns;
+        running = true;
+        return enemySpawns.Count;
 	}
 }

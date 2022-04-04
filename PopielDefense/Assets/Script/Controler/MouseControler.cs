@@ -42,7 +42,7 @@ public class MouseControler : MonoBehaviour
 
     public GameObject ragdoll;
     public GameObject bulletTarget;
-
+    private WaveManager waveManager;
     public void Init(Waypoints p, Transform pos)
 	{
         path = p;
@@ -61,6 +61,7 @@ public class MouseControler : MonoBehaviour
 		}
         currentHealth = health;
         animator = GetComponent<Animator>();
+        waveManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<WaveManager>();
     }
 
     // Update is called once per frame
@@ -83,7 +84,7 @@ public class MouseControler : MonoBehaviour
 			{
                 damageDelayTimer = 0f;
                 attacking = false;
-                //Send DMG to Popiel
+                popiel.GetComponent<TowerManager>().TakeDamage(attackDamage);
 			}
             damageDelayTimer += Time.deltaTime;
 		}
@@ -151,6 +152,8 @@ public class MouseControler : MonoBehaviour
             var go = Instantiate(ragdoll, transform.position, transform.rotation);
             if(direction.magnitude != 0)
                 go.GetComponent<Ragdoll>().SetForce(new Vector3(direction.x, Random.Range(0.1f, 0.2f), direction.z), 40000f);
+
+            waveManager.enemyCount--;
             Destroy(gameObject);
             return;
 		}

@@ -21,6 +21,7 @@ public class TowerManager : MonoBehaviour
         if(amount >= currentHP)
         {
             currentHP = 0.0f;
+            
             //Ubij wie¿e
         }
         else
