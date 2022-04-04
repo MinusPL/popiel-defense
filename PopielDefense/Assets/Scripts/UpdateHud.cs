@@ -9,15 +9,15 @@ public class UpdateHud : MonoBehaviour
     public int enemyCounter = 23;
     public int hpCounter = 23;
     public int goldCounter = 23;
-    public TextMeshProUGUI EnemyCounterHandle;
-    public TextMeshProUGUI TowerHpHandle;
-    public TextMeshProUGUI GoldCounterHandle;
+    public TextMeshProUGUI enemyCounterHandle;
+    public TextMeshProUGUI towerHpHandle;
+    public TextMeshProUGUI goldCounterHandle;
     // Start is called before the first frame update
     void Start()
     {
-        EnemyCounterHandle.text = "" + 0;
-        TowerHpHandle.text = "" + 0;
-        GoldCounterHandle.text = "" + 0;
+        enemyCounterHandle.text = "" + 0;
+        towerHpHandle.text = "" + 0;
+        goldCounterHandle.text = "" + 0;
         
     }
 
@@ -31,16 +31,16 @@ public class UpdateHud : MonoBehaviour
 
     void UpdateEnemyCounter()
     {
-        EnemyCounterHandle.text = "" + enemyCounter;
+        enemyCounterHandle.text = "" + enemyCounter;
     }
     
     void UpdateGoldCounter()
     {
-        GoldCounterHandle.text = "" + goldCounter;
+        goldCounterHandle.text = "" + goldCounter;
     }
     
     void UpdateHealthCounter()
     {
-        TowerHpHandle.text = "" + hpCounter;
+        towerHpHandle.text = "" + hpCounter;
     }
 }
