@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90c21f01eae35324782bd2956d3a9c09, type: 3}
-  m_Name: East_1
+  m_Script: {fileID: 11500000, guid: 28ddad7313aa2b64a858a730685b7103, type: 3}
+  m_Name: MouseArcher
   m_EditorClassIdentifier: 
-  waveNumber: 1
-  spawnerID: 2
-  enemies: 0,1,1,0,0,1,1,0,0,1,1,0,0,1,1,0
-  spawnTime: 2.5
+  id: 1
+  prefab: {fileID: 4582308207916527952, guid: b9a6ab1733bb8864e97a174f2933776f, type: 3}
