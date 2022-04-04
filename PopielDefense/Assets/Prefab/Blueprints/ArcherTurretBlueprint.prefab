@@ -72,6 +72,7 @@ MonoBehaviour:
   okMaterial: {fileID: 2100000, guid: bd37901885e9edb47ae351bcee8a9428, type: 2}
   badMaterial: {fileID: 2100000, guid: d4b7354c834dade44af2d5a1aab77faa, type: 2}
   building: {fileID: 8984348308717826744, guid: c4016b243976eec4bada4c2039b48f40, type: 3}
+  price: 50
 --- !u!114 &4287530937980818795
 MonoBehaviour:
   m_ObjectHideFlags: 0

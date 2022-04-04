@@ -2575,11 +2575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697789220543928190, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017234592
+      value: -0.000000017237655
       objectReference: {fileID: 0}
     - target: {fileID: 1697789220543928190, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.9898173e-10
+      value: -2.9903485e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1697789221217147731, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2599,11 +2599,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697789221217147731, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 4.125001e-10
+      value: 4.120822e-10
       objectReference: {fileID: 0}
     - target: {fileID: 1697789221217147731, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -3.2852285e-13
+      value: -3.2819003e-13
       objectReference: {fileID: 0}
     - target: {fileID: 1697789221308313554, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_FollowOffset.y
@@ -2631,11 +2631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1697789221931415321, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 8.012715e-32
+      value: -6.2634853e-31
       objectReference: {fileID: 0}
     - target: {fileID: 1697789221931415321, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.1651221e-33
+      value: 3.1233797e-31
       objectReference: {fileID: 0}
     - target: {fileID: 1697789222094062552, guid: 6974e4eb4fe242e4db1a86df865f5c6c, type: 3}
       propertyPath: m_FollowOffset.y
@@ -16806,6 +16806,10 @@ PrefabInstance:
       propertyPath: reg
       value: 
       objectReference: {fileID: 1829295490}
+    - target: {fileID: 992290690851758431, guid: 0763827a2013fe441ad89c34856ece6e, type: 3}
+      propertyPath: timeBetweenWaves
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 992290690851758431, guid: 0763827a2013fe441ad89c34856ece6e, type: 3}
       propertyPath: spawners.Array.data[0]
       value: 
