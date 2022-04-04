@@ -978,7 +978,7 @@ MonoBehaviour:
   damageDelay: 0.4
   canvas: {fileID: 3725179381637138142}
   healthBar: {fileID: 7828605297437418058}
-  ragdoll: {fileID: 5419863818625411778, guid: ebafacd38b29f8b46ba5f629a0af2bfc, type: 3}
+  ragdoll: {fileID: 5271754630060372421, guid: 5a1d30cb7e50be4429448f87f29b8b56, type: 3}
   bulletTarget: {fileID: 7325407766657498887}
 --- !u!136 &1454795742522677042
 CapsuleCollider:
