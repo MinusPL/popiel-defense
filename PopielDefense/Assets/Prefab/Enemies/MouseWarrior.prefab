@@ -796,8 +796,8 @@ MonoBehaviour:
   speed: 5
   range: 5
   type: 0
-  health: 1
-  attackCooldown: 10
+  health: 2
+  attackCooldown: 3
   attackDamage: 1
   damageDelay: 0.4
   canvas: {fileID: 3594352151372531198}

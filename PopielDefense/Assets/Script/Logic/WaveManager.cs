@@ -14,6 +14,7 @@ public class WaveManager : MonoBehaviour
 
     public GameObject[] spawners;
     public Registry reg;
+    public UpdateHud hud;
 
     public int enemyCount = 0;
 
@@ -49,7 +50,7 @@ public class WaveManager : MonoBehaviour
                 waveInProgress = false;
 			}
 		}
-
+        hud.enemyCounter = enemyCount;
     }
 
     private void StartWave(int waveIndex)

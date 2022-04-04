@@ -53,3 +53,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   reg: {fileID: 0}
+  hud: {fileID: 5301649019577706232, guid: 816f76025c2b51f4c9ce24d0547779a7, type: 3}
+  enemyCount: 0

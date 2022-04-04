@@ -145,18 +145,21 @@ public class MouseControler : MonoBehaviour
     }
 
     public void Damage(float dmg, Vector3 direction = default(Vector3))
-	{
-        currentHealth -= dmg;
-        if(currentHealth <= 0f)
-		{
-            var go = Instantiate(ragdoll, transform.position, transform.rotation);
-            if(direction.magnitude != 0)
-                go.GetComponent<Ragdoll>().SetForce(new Vector3(direction.x, Random.Range(0.1f, 0.2f), direction.z), 40000f);
+    {
+        if (currentHealth > 0f)
+        { 
+            currentHealth -= dmg;
+            if (currentHealth <= 0f)
+            {
+                var go = Instantiate(ragdoll, transform.position, transform.rotation);
+                if (direction.magnitude != 0)
+                    go.GetComponent<Ragdoll>().SetForce(new Vector3(direction.x, Random.Range(0.1f, 0.2f), direction.z), 40000f);
 
-            waveManager.enemyCount--;
-            Destroy(gameObject);
-            return;
-		}
+                waveManager.enemyCount--;
+                Destroy(gameObject);
+                return;
+            }
+        }
         healthBar.fillAmount = currentHealth / health;
 	}
 }

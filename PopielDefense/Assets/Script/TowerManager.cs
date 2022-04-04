@@ -5,13 +5,19 @@ public class TowerManager : MonoBehaviour
     public float maxHP = 100.0f;
 
     private float currentHP;
-    
+
+    public UpdateHud hud;
     void Start()
     {
         currentHP = maxHP;
     }
 
-    public float GetCurrentHP()
+	private void Update()
+	{
+        hud.hpCounter = (int)currentHP;
+	}
+
+	public float GetCurrentHP()
     {
         return currentHP;
     }
@@ -21,7 +27,7 @@ public class TowerManager : MonoBehaviour
         if(amount >= currentHP)
         {
             currentHP = 0.0f;
-            
+
             //Ubij wie¿e
         }
         else
