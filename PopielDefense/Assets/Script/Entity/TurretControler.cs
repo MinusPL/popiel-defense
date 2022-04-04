@@ -9,12 +9,12 @@ public class TurretControler : MonoBehaviour
     public float rotationSpeed = 10.0f;
     public float fireRate = 1f;
     private float fireTimer = 0;
-    GameObject target = null;
+    private GameObject target = null;
 
     public GameObject bullet;
     public Transform firePoint;
 
-    Vector3 dir2;
+    public Vector3 dir2;
 
     private float targetSeekTime = 0.25f;
 
@@ -47,7 +47,7 @@ public class TurretControler : MonoBehaviour
         fireTimer -= Time.deltaTime;
     }
 
-    private void Fire()
+    public void Fire()
 	{
         GameObject bulletObject = Instantiate(bullet, firePoint.position, Quaternion.LookRotation(dir2));
         bulletObject.GetComponent<Bullet>().Init(target, target.GetComponent<MouseControler>().bulletTarget.transform);
