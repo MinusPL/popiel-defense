@@ -103,7 +103,7 @@ MonoBehaviour:
   range: 15
   head: {fileID: 2586975688994374307}
   rotationSpeed: 10
-  fireRate: 0.3
+  fireRate: 0.4
   bullet: {fileID: 1063661012384588415, guid: 3937a58fb4abf6f4d9594eb8e2250ff4, type: 3}
   firePoint: {fileID: 3397862011409296477}
   dir2: {x: 0, y: 0, z: 0}
