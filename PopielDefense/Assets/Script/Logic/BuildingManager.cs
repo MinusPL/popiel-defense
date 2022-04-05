@@ -7,7 +7,7 @@ public class BuildingManager : MonoBehaviour
     public GameObject archerBlueprintPrefab;
     public GameObject mageBlueprintPrefab;
 
-    private bool isPlacing = false;
+    public bool isPlacing = false;
 
     public void PlacingArcher()
     {

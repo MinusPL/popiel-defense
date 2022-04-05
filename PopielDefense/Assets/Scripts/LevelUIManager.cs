@@ -11,6 +11,8 @@ public class LevelUIManager : MonoBehaviour
     public DialogEvent dialogEvent;
     public PauseEvent pauseEvent;
 
+    public GameObject gameOverMenu;
+
     public bool objectsPaused = false;
     public int startDialogID = 0;
     // Start is called before the first frame update
@@ -35,6 +37,6 @@ public class LevelUIManager : MonoBehaviour
 
     public void GameOver()
 	{
-
+        gameOverMenu.SetActive(true);
 	}
 }

@@ -97,7 +97,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7465357730775352436
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1017,6 +1017,7 @@ MonoBehaviour:
   waveNoHandle: {fileID: 493301218158418018}
   timerHandle: {fileID: 5301649020449010590}
   shopHandle: {fileID: 5301649020186382687}
+  menu: {fileID: 0}
 --- !u!1 &5301649019741946830
 GameObject:
   m_ObjectHideFlags: 0

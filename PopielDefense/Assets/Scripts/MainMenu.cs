@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     
     public void StartButton()
     {
-        SceneManager.LoadScene("GameSceneDummy");
+        SceneManager.LoadScene(1);
     }
 
 }

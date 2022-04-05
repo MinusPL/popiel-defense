@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UpdateHud : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class UpdateHud : MonoBehaviour
 
 
     private Keyboard kbHandle;
+
+    private BuildingManager bManager;
+
+    public GameObject menu;
     
     // Start is called before the first frame update
     void Start()
@@ -33,10 +38,10 @@ public class UpdateHud : MonoBehaviour
         enemyCounter = 0;
         hpCounter = 0;
         goldCounter = 0;
-        repairCost = 0;
+        //repairCost = 0;
         
         kbHandle = Keyboard.current;
-        
+        bManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<BuildingManager>();
     }
 
     // Update is called once per frame
@@ -82,4 +87,22 @@ public class UpdateHud : MonoBehaviour
     {
         towerHpHandle.text = "" + hpCounter;
     }
+
+    public void OnCancelBuild(InputValue value)
+	{
+        if(!bManager.isPlacing)
+		{
+            menu.SetActive(!menu.activeSelf);
+		}
+	}
+
+    public void ExitToMenu()
+	{
+        SceneManager.LoadScene(0);
+	}
+
+    public void ReloadLevel()
+	{
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 }
